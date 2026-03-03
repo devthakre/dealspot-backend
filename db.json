@@ -1,0 +1,123 @@
+{
+  "users": [],
+  "businesses": [],
+  "offers": [
+    {
+      "id": 1,
+      "name": "Summer Blowout Sale",
+      "business": "Zara",
+      "category": "retail",
+      "discount": "30%",
+      "description": "Off all summer collection",
+      "distance": "180m",
+      "hours": "Open now",
+      "timer": "2h 14m",
+      "views": 1200,
+      "active": true
+    },
+    {
+      "id": 2,
+      "name": "Free Drink on Any Meal",
+      "business": "Burger Lab",
+      "category": "food",
+      "discount": "Free",
+      "description": "Any soft drink with order",
+      "distance": "320m",
+      "hours": "11am–11pm",
+      "timer": "45m",
+      "views": 847,
+      "active": true
+    },
+    {
+      "id": 3,
+      "name": "Ladies Night 2-for-1",
+      "business": "Skybar Lounge",
+      "category": "event",
+      "discount": "2for1",
+      "description": "All cocktails tonight only",
+      "distance": "600m",
+      "hours": "8pm–2am",
+      "timer": "4h 30m",
+      "views": 3400,
+      "active": true
+    },
+    {
+      "id": 4,
+      "name": "Haircut + Style Deal",
+      "business": "Studio One",
+      "category": "service",
+      "discount": "40%",
+      "description": "Full cut and blowdry",
+      "distance": "410m",
+      "hours": "9am–9pm",
+      "timer": "1h 52m",
+      "views": 522,
+      "active": true
+    },
+    {
+      "id": 5,
+      "name": "End of Season Clearance",
+      "business": "H&M",
+      "category": "retail",
+      "discount": "50%",
+      "description": "Selected items only",
+      "distance": "250m",
+      "hours": "Open now",
+      "timer": "3h 10m",
+      "views": 2100,
+      "active": true
+    },
+    {
+      "id": 1772548923456,
+      "name": "Test Deal",
+      "business": "My Shop",
+      "category": "retail",
+      "discount": "20%",
+      "description": "Test offer from database",
+      "distance": "100m",
+      "hours": "Open now",
+      "timer": "1h",
+      "views": 0,
+      "active": true,
+      "createdAt": "2026-03-03T14:42:03.456Z"
+    },
+    {
+      "id": 1772548960041,
+      "views": 0,
+      "active": true,
+      "createdAt": "2026-03-03T14:42:40.041Z"
+    },
+    {
+      "id": 1772549007600,
+      "name": "Test Deal",
+      "business": "My Shop",
+      "category": "retail",
+      "discount": "20%",
+      "description": "Test offer from database",
+      "distance": "100m",
+      "hours": "Open now",
+      "timer": "1h",
+      "views": 0,
+      "active": true,
+      "createdAt": "2026-03-03T14:43:27.600Z"
+    }
+  ],
+  "reviews": [
+    {
+      "id": 1,
+      "offerId": 1,
+      "user": "Sara M.",
+      "stars": 5,
+      "text": "Amazing deal! Saved so much.",
+      "date": "2 days ago"
+    },
+    {
+      "id": 2,
+      "offerId": 1,
+      "user": "James K.",
+      "stars": 4,
+      "text": "Great app, very convenient!",
+      "date": "3 days ago"
+    }
+  ]
+}
