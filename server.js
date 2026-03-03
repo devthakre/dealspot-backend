@@ -1,3 +1,7 @@
+const fs = require('fs');
+if (!fs.existsSync('db.json')) {
+  fs.writeFileSync('db.json', JSON.stringify({users:[],businesses:[],offers:[],reviews:[]}));
+}
 const express = require('express');
 const cors = require('cors');
 const low = require('lowdb');
