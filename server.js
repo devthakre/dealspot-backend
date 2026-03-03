@@ -111,10 +111,11 @@ app.post('/users', (req, res) => {
 });
 
 // ── START SERVER ──────────────────────
-app.listen(3000, () => {
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
   console.log('');
   console.log('🚀 Dealspot backend running!');
-  console.log('📡 API: http://localhost:3000');
+  console.log(`📡 API: http://localhost:${PORT}`);
   console.log('📦 Database: db.json (local file)');
   console.log('');
 });
