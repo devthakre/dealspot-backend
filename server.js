@@ -118,3 +118,49 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, '0.0.0.0', () => {
   console.log(`🚀 Dealspot running on port ${PORT}`);
 });
+// ── LOGIN ──────────────────────────────
+app.post('/auth/signup', (req, res) => {
+  const db = readDB();
+  const { name, email, password } = req.body;
+  if (!name || !email || !password) 
+    return res.json({ success: false, error: 'All fields required' });
+  if (db.users.find(u => u.email === email))
+    return res.json({ success: false, error: 'Email already registered' });
+  const user = { 
+    id: Date.now(), name, email, 
+    password, // in production use hashing!
+    avatar: '👤', savedOffers: [], redeemedOffers: [],
+    createdAt: new Date().toISOString() 
+  };
+  db.users.push(user);
+  writeDB(db);
+  const { password: _, ...safeUser } = user;
+  res.json({ success: true, user: safeUser });
+});
+
+app.post('/auth/login', (req, res) => {
+  const db = readDB();
+  const { email, password } = req.body;
+  const user = db.users.find(u => u.email === email && u.password === password);
+  if (!user) return res.json({ success: false, error: 'Invalid email or password' });
+  const { password: _, ...safeUser } = user;
+  res.json({ success: true, user: safeUser });
+});
+
+app.get('/auth/user/:id', (req, res) => {
+  const db = readDB();
+  const user = db.users.find(u => u.id === parseInt(req.params.id));
+  if (!user) return res.status(404).json({ error: 'User not found' });
+  const { password: _, ...safeUser } = user;
+  res.json(safeUser);
+});
+
+app.put('/auth/user/:id', (req, res) => {
+  const db = readDB();
+  const idx = db.users.findIndex(u => u.id === parseInt(req.params.id));
+  if (idx === -1) return res.status(404).json({ error: 'Not found' });
+  db.users[idx] = { ...db.users[idx], ...req.body };
+  writeDB(db);
+  const { password: _, ...safeUser } = db.users[idx];
+  res.json({ success: true, user: safeUser });
+});
